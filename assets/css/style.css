@@ -1,0 +1,22 @@
+.question {
+    margin-top: 5vh;
+    text-align:center;
+    border: 1px solid red;
+}
+header h1 {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+footer {
+    text-align: center;
+}
+
+.answers {
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.next {
+    text-align: center;
+}
