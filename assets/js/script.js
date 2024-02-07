@@ -38,7 +38,7 @@ function showQuestion() {
 
     allAnswers.forEach((answer, index) => {
         const answerDiv = answerDivs[index];
-        answerDiv.innerText = `${answer}`;
+        answerDiv.innerHTML = `${answer}`;
         answerDiv.dataset.correct = answer === currentQuestion.correct_answer;
         answerDiv.addEventListener("click", selectAnswer);
     });
