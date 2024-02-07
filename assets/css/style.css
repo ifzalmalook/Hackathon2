@@ -8,6 +8,10 @@
     color: #333;
 }
 
+.main {
+
+}
+
 .question {
     margin-top: 5vh;
     text-align:center;
@@ -34,5 +38,5 @@ footer {
 /*---------- Buttons -------------*/
 
 .btn {
-    
+
 }
