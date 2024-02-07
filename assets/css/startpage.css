@@ -48,6 +48,7 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 2;
     max-width: 80rem;
     margin: 0 auto;
     border:#cd6529;
