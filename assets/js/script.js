@@ -55,11 +55,11 @@ function resetState() {
 function selectAnswer(e) {
     const selectedDiv = e.target;
     const isCorrect = selectedDiv.dataset.correct === "true";
-    if (isCorrect) {
+    if (isCorrect && !selectedDiv.classList.contains("correct")) {
         selectedDiv.classList.add("correct");
         score++;
         scoreTracker.innerHTML = `${score}`;
-    } else {
+    } else if (!isCorrect && !selectedDiv.classList.contains("incorrect")){
         selectedDiv.classList.add("incorrect");
     }
     answerDivs.forEach(answerDiv => {
