@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+
 * {
     box-sizing: border-box;
     font-family: 'Open Sans', Helvetica, sans-serif;
@@ -8,35 +9,47 @@
     color: #333;
 }
 
-.main {
-
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 10px;
 }
 
-.question {
-    margin-top: 5vh;
-    text-align:center;
-    border: 1px solid red;
-}
-header h1 {
-    text-align: center;
-    margin-top: 10vh;
+h1 {
+    font-size: 54px;
+    margin-bottom: 5px;
 }
 
-footer {
-    text-align: center;
+p {
+    margin: 0;
 }
 
-.answers {
+/*------Game page---------------*/
+
+main {
+    background-color: lightblue;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0, auto;
+}
+
+.answer-container {
+    display: flex;
     width: 100%;
-    margin-top: 2vh;
 }
 
-.next {
-    text-align: center;
+.answer-prefix {
+padding: 15px 25px;
 }
 
-/*---------- Buttons -------------*/
-
-.btn {
-
+.answer-text {
+    padding: 15px;
 }
