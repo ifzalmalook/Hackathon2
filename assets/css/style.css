@@ -41,15 +41,26 @@ main {
     margin: 0, auto;
 }
 
+#question-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 10px;
+}
+
 .answer-container {
     display: flex;
     width: 100%;
+    margin: 5px 10px 0px 10px;
 }
 
 .answer-prefix {
 padding: 15px 25px;
+background-color: lightyellow;
 }
 
 .answer-text {
     padding: 15px;
+    background-color: lightyellow;
+    width: 100%;
 }
