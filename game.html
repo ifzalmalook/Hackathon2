@@ -13,16 +13,27 @@
 <body>
     <main>
         <div class="container g-0">
-            <div id="game" class="d-flex flex-column justify-content-center align-items-center">
-                <div class="row col-12">
-                    <div class="col-2 timer">
-                        <p id="timer">Timer</p>
-                    </div>
-                    <div class="col-8"></div>
-                    <div class="col-2">
-                        <p id="score">score</p>
+            <div id="game" class="d-flex flex-column justify-content-center align-items-center row">
+            <div class="row">
+                <!-- Question counter and progress bar -->
+                <div class="game-header-item col-4">
+                    <p id="progressText" class="game-header-prefix">
+                        Time
+                    </p>
+                    <div id="timer">
+                        <div id="timer-icon"></div>
                     </div>
                 </div>
+                <div class="col-4"></div>
+                <div class="game-header-item col-4">
+                    <p class="game-header-prefix">
+                        Score
+                    </p>
+                    <h1 class="game-header-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
                 <div class="row">
                     <div class="row">
                         <div id="question-container" class="col-lg-12">
@@ -52,11 +63,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <p id="progress-text">progress</p>
-                </div>
-                <div class="row">
-                    <p id="progress-bar">progress bar</p>
+                <div class="game-footer-item col-4">
+                    <p id="progressText" class="game-footer-prefix">
+                        Question
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
+                    </div>
                 </div>
             </div>
         </div>
