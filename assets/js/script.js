@@ -6,6 +6,7 @@ let score = 0;
 const questionElement = document.getElementById("question-container");
 const answerDivs = document.querySelectorAll(".answer-text");
 const nextButton = document.getElementById("next-btn");
+const scoreTracker = document.getElementById("score");
 
 async function fetchData() {
     try {
@@ -57,6 +58,7 @@ function selectAnswer(e) {
     if (isCorrect) {
         selectedDiv.classList.add("correct");
         score++;
+        scoreTracker.innerHTML = `${score}`;
     } else {
         selectedDiv.classList.add("incorrect");
     }
