@@ -15,7 +15,6 @@ img{
     height: 55vh;
     max-width: 85rem;
     position: absolute;
-    z-index: -1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
