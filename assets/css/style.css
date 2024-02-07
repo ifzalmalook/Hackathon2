@@ -54,13 +54,42 @@ main {
     margin: 5px 10px 0px 10px;
 }
 
+
 .answer-prefix {
-padding: 15px 25px;
+padding: 20px;
 background-color: lightyellow;
+border-radius: 5px 0 0 5px;
 }
 
 .answer-text {
-    padding: 15px;
+    padding: 20px;
     background-color: lightyellow;
     width: 100%;
+    border-radius: 0 5px 5px 0;
+}
+
+.game-header-prefix,
+.game-footer-prefix {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.game-header-main-text,
+.game-footer-main-text {
+    text-align: center;
+}
+
+#progressBar {
+    width: 250px;
+    height: 50px;
+    border: 0.2rem solid rgb(0, 0, 0);
+    margin-top: 1.5rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background: rgb(0, 0, 0);
+    width: 0%;
 }

@@ -13,34 +13,62 @@
 <body>
     <main>
         <div class="container g-0">
-            <div id="game" class="d-flex flex-column justify-content-center align-items-center">
+            <div id="game" class="d-flex flex-column justify-content-center align-items-center row">
+            <div class="row">
+                <!-- Question counter and progress bar -->
+                <div class="game-header-item col-4">
+                    <p id="progressText" class="game-header-prefix">
+                        Time
+                    </p>
+                    <div id="timer">
+                        <div id="timer-icon"></div>
+                    </div>
+                </div>
+                <div class="col-4"></div>
+                <div class="game-header-item col-4">
+                    <p class="game-header-prefix">
+                        Score
+                    </p>
+                    <h1 class="game-header-main-text" id="score">
+                        0
+                    </h1>
+                </div>
+            </div>
                 <div class="row">
-                    <div class="row no-gutters">
+                    <div class="row">
                         <div id="question-container" class="col-lg-12">
-                        <h1>The Question goes here</h1>
+                            <h1>The Question goes here</h1>
                         </div>
                     </div>
-                    <div class="row no-gutters">
-                        <div class="col-lg-6">
-                            <div class="answer-container">
+                    <div class="row">
+                        <div class="answers-container col-lg-6">
+                            <div id="answer-one" class="answer-container">
                                 <p class="answer-prefix">A</p>
                                 <p class="answer-text">Answer 1</p>
                             </div>
-                            <div class="answer-container">
+                            <div id="answer-two" class="answer-container">
                                 <p class="answer-prefix">B</p>
                                 <p class="answer-text">Answer 2</p>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="answer-container">
+                        <div class="answers-container col-lg-6">
+                            <div id="answer-three" class="answer-container">
                                 <p class="answer-prefix">C</p>
                                 <p class="answer-text">Answer 3</p>
                             </div>
-                            <div class="answer-container">
+                            <div id="answer-four" class="answer-container">
                                 <p class="answer-prefix">D</p>
                                 <p class="answer-text">Answer 4</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="game-footer-item col-4">
+                    <p id="progressText" class="game-footer-prefix">
+                        Question
+                    </p>
+                    <div id="progressBar">
+                        <div id="progressBarFull"></div>
                     </div>
                 </div>
             </div>
