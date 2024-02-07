@@ -48,11 +48,10 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
     max-width: 80rem;
     margin: 0 auto;
     border:#cd6529;
-    
+    z-index: 2;
   }
   
   .container > * {
@@ -92,6 +91,7 @@ img{
     text-decoration: none;
     color: #cd6529;
     background-color: white;
+    z-index: 2;
   }
   
   .btn:hover {
