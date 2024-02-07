@@ -34,6 +34,7 @@ img{
     font-size: 5.2vw;
     color: #f2c642;
     margin-bottom: 2rem;
+    z-index: 2;
   }
   
   h1 > span {
