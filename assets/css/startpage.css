@@ -26,7 +26,7 @@ img{
 .parentContainer {
      position: relative;
      text-align: center;
-     z-index: 1;
+     z-index: -1;
    }
   
   h1 {
