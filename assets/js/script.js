@@ -37,7 +37,7 @@ function showQuestion() {
 
     allAnswers.forEach((answer, index) => {
         const answerDiv = answerDivs[index];
-        answerDiv.innerText = `${String.fromCharCode(65 + index)}. ${answer}`;
+        answerDiv.innerText = `${answer}`;
         answerDiv.dataset.correct = answer === currentQuestion.correct_answer;
         answerDiv.addEventListener("click", selectAnswer);
     });
