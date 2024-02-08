@@ -90,6 +90,7 @@ function selectAnswer(e) {
     if (isCorrect) {
         selectedDiv.classList.add("correct");
         score++;
+        scoreTracker.textContent = score;
     } else {
         selectedDiv.classList.add("incorrect");
     }
