@@ -27,7 +27,7 @@ p {
 
 /*------Game page---------------*/
 
-main {
+body {
     background-color: lightblue;
 }
 
@@ -120,6 +120,16 @@ border-radius: 5px 0 0 5px;
     height: 100%;
     background: rgb(0, 0, 0);
     width: 0%;
+}
+
+#play-again-button {
+    color: azure;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    height: 100%;
+    border: 0.2rem solid rgb(0, 0, 0);
+    border-radius: 50px;
+    overflow: hidden;
 }
 
 .correct {

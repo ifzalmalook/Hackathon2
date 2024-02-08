@@ -142,6 +142,9 @@ function changeAcceptingAnswers(newVal) {
 
 function showScore() {
     resetState();
+    progressBarFull.innerHTML = `
+    <button id="play-again-button" class="btn" onclick="replayQuiz()">Play Again?</button>
+    `
     questionElement.innerHTML = `
     <div class="col-12 text-center">
     <h2>You scored ${score} out of ${questions.length}!</h2>
@@ -191,16 +194,18 @@ function replayQuiz() {
     location.reload();
 };
 
+/* timer functions Timer will count down from 60 at second intervals
+when it reaches zero the game will end */
 
-
-// timer functions
-
-let tCount = 0;
+let tCount = 60;
 let time = setInterval(timingFunction, 1000);
 
 function timingFunction() {
     if (acceptingAnswers) {
         document.getElementById("timer-icon").innerHTML = `${tCount}`;
-        tCount = tCount + 1;
-    }
+        tCount = tCount - 1;
+        setTimeout(() => {
+            showScore();
+          }, 60000);
+    };
 }
