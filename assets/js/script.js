@@ -83,6 +83,9 @@ answerDivs.forEach(answerDiv => answerDiv.addEventListener("click", selectAnswer
 
 
 function selectAnswer(e) {
+    if (!acceptingAnswers) {
+        return;
+    } else {
     const selectedDiv = e.target;
     const isCorrect = selectedDiv.dataset.correct === "true";
 
@@ -114,6 +117,7 @@ function selectAnswer(e) {
     setTimeout(() => {
         handleNextButton();
     }, 500); // Adjust the delay time as needed (in milliseconds)
+}
 }
 
 
