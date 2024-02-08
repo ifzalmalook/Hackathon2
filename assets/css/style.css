@@ -75,6 +75,10 @@ body {
     text-align: center;
 }
 
+.answers-container {
+    min-height: 190px;
+}
+
 .answer-container {
     display: flex;
     width: 100%;
@@ -153,6 +157,10 @@ border-radius: 5px 0 0 5px;
 #next-btn {
     display: none;
 }
+
+.hidden {
+    display: none;
+  }
 
 @media only screen and (min-width: 576px) {
     #replay-text {

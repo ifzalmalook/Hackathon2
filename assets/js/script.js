@@ -154,40 +154,51 @@ function showScore() {
     if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
-    <div id="answer-one" class="answer-container">
-    <p class="final-text">You</p>
+    <div id="final-text1" class="answer-container">
+    <p class="final-text hidden">You</p>
     </div>
-    <div id="answer-two" class="answer-container">
-    <p class="final-text">are</p>
+    <div id="final-text2" class="answer-container">
+    <p class="final-text hidden">are</p>
     </div>
 </div>
 <div class="answers-container col-lg-6">
-    <div id="answer-three" class="answer-container">
-    <p class="final-text">a</p>
+    <div id="final-text3" class="answer-container">
+    <p class="final-text hidden">a</p>
     </div>
-    <div id="answer-four" class="answer-container">
-    <p class="final-text">legend!</p>
+    <div id="final-text" class="answer-container">
+    <p class="final-text hidden">legend!</p>
     </div>
     `;} else {
         allAnswersContainer.innerHTML = `
         <div class="answers-container col-lg-6">
-        <div id="answer-one" class="answer-container">
-        <p class="final-text">Try</p>
+        <div class="answer-container">
+        <p id="final-text1" class="final-text hidden">Try</p>
         </div>
-        <div id="answer-two" class="answer-container">
-        <p class="final-text">harder</p>
+        <div class="answer-container">
+        <p id="final-text2" class="final-text hidden">harder</p>
         </div>
     </div>
     <div class="answers-container col-lg-6">
-        <div id="answer-three" class="answer-container">
-        <p class="final-text">next</p>
+        <div class="answer-container">
+        <p id="final-text3" class="final-text hidden">next</p>
         </div>
-        <div id="answer-four" class="answer-container">
-        <p class="final-text">time!</p>
+        <div class="answer-container">
+        <p id="final-text4" class="final-text hidden">time!</p>
         </div>
         `;
     };
     changeAcceptingAnswers(false);
+    runFinalText();
+};
+
+
+const runFinalText = () => {
+    const finalText = document.querySelectorAll('.final-text');
+  for (let i = 0; i < finalText.length; i++) {
+    setTimeout(() => {
+      finalText[i].classList.remove('hidden');
+    }, i * 1000);
+  }
 };
 
 function replayQuiz() {
@@ -208,4 +219,13 @@ function timingFunction() {
             showScore();
           }, 60000);
     };
+}
+
+const finalText = getElementsByClassName("answer-text");
+for (let i = 0; i < finalText.length; i++) {
+  (function(idx) {
+    setTimeout(function() {
+      $('#' + leds[idx].id).css('opacity', '1');
+    }, 1000 * idx);
+  })(i)
 }
