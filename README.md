@@ -1,8 +1,8 @@
-<h1> Brainiac Brews: The Code Inquiziters Pub Quiz </h1>
+<h1> Tipsy Trivia: The Code Inquiziters Pub Quiz </h1>
 
 [View the live project here] ()
 
-The Brainiac Brews Pub Quiz Game is an interactive website game which is an entertaining general knowledge test excersize. The game is engaging, and is challenging for brain puzzles and information recall to test the audience's general knowledge ability. The site is targeted towards people who are interested in gaming, people who are curious about testing their general knowledge skills. The interactive site has a USP of user friendly design and visuals to make the game accesscible to a wide audience, with the appeal of many queestion types from general knowledge which is inclusive audience appeal to all audience types to reach the widest audience appeal. The interactive website is particularly engaging with its use of a question timer, a score counter and clear option choices to encourage and motivate the audience to engage and continue to practice their skills.
+Tipsy Trivia is an interactive website game which is an entertaining general knowledge test exercise. The game is engaging, and is challenging for brain puzzles and information recall to test the audience's general knowledge ability. The site is targeted towards people who are interested in gaming and people who are curious about testing their general knowledge skills. The interactive site has a USP of user friendly design and visuals to make the game accessible to a wide audience. The interactive website is particularly engaging with its use of a game timer, a score counter and clear option choices to encourage and motivate the audience to engage and continue to practice their skills.
 
 ![Mockup] ()
 
@@ -10,7 +10,6 @@ The Brainiac Brews Pub Quiz Game is an interactive website game which is an ente
 * [User Experience (UX)](#user-experience-ux) 
 * [Features](#features)
 * [Design](#design)
-* [Technologies Used](#technologies-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
@@ -44,7 +43,7 @@ The Brainiac Brews Pub Quiz Game is an interactive website game which is an ente
 
     ____F01 Start Page - 
 
-    *Insert screenshot of home page*
+    <img src="assets/readmeimages/homepage.jpg" alt="Homepage" width="300" height="200">
 
     - The start page provides a clear theme of pub quiz game, with a warm inviting and interactive content. For ease of use the text is minimal for readability.The background image was selected as a high quality visial and a clear title was added and high quality visuals to draw the eye centrally to invite the audience to proceed. 
     
