@@ -6,6 +6,7 @@ let currentQuestionIndex = 0;
 let currentQuestionCounter = 0;
 let score = 0;
 let maxQuestions = 10;
+let acceptingAnswers = true;
 
 const questionElement = document.getElementById("question-container");
 const progressText = document.getElementById('progressText');
@@ -129,20 +130,24 @@ function handleNextButton() {
 
 }
 
+function changeAcceptingAnswers(newVal) {
+    acceptingAnswers = newVal;
+}
 
 function showScore() {
     resetState();
     questionElement.innerHTML = `<h2>You scored ${score} out of ${questions.length}!</h2>`
-
+    changeAcceptingAnswers(false);
 };
 
 // timer functions
 
 let tCount = 0;
-let tim = setInterval(timingFunction, 1000);
+let time = setInterval(timingFunction, 1000);
 
-function timingFunction(){ 
-    document.getElementById("timer-icon").innerHTML = `${tCount}`;
-    tCount = tCount + 1;
-
+function timingFunction() {
+    if (acceptingAnswers) {
+        document.getElementById("timer-icon").innerHTML = `${tCount}`;
+        tCount = tCount + 1;
+    }
 }
