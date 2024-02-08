@@ -216,17 +216,9 @@ function timingFunction() {
     if (acceptingAnswers) {
         document.getElementById("timer-icon").innerHTML = `${tCount}`;
         tCount = tCount - 1;
-        setTimeout(() => {
+        if (tCount < 0) {
+            clearInterval(time);
             showScore();
-          }, 60000);
+        }
     };
-}
-
-const finalText = getElementsByClassName("answer-text");
-for (let i = 0; i < finalText.length; i++) {
-  (function(idx) {
-    setTimeout(function() {
-      $('#' + leds[idx].id).css('opacity', '1');
-    }, 1000 * idx);
-  })(i)
 }
