@@ -8,6 +8,7 @@ let score = 0;
 let maxQuestions = 10;
 let acceptingAnswers = true;
 
+const replayButton = document.getElementById('replay-button');
 const allAnswersContainer = document.getElementById("all-answers");
 const questionElement = document.getElementById("question-container");
 const progressText = document.getElementById('progressText');
@@ -144,7 +145,7 @@ function showScore() {
     questionElement.innerHTML = `
     <div class="col-12 text-center">
     <h2>You scored ${score} out of ${questions.length}!</h2>
-    <button class="btn mt-3">Play Again?</button>
+    <button id="replay-button" class="btn mt-3" onclick="replayQuiz()">Play Again?</button>
     </div>
     `;
     if (score>6) {
@@ -185,6 +186,12 @@ function showScore() {
     };
     changeAcceptingAnswers(false);
 };
+
+function replayQuiz() {
+    location.reload();
+};
+
+
 
 // timer functions
 
