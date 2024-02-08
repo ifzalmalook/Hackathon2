@@ -141,7 +141,12 @@ function changeAcceptingAnswers(newVal) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `<h2>You scored ${score} out of ${questions.length}!</h2>`;
+    questionElement.innerHTML = `
+    <div class="col-12 text-center">
+    <h2>You scored ${score} out of ${questions.length}!</h2>
+    <button class="btn mt-3">Play Again?</button>
+    </div>
+    `;
     if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
