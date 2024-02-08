@@ -153,3 +153,10 @@ border-radius: 5px 0 0 5px;
 #next-btn {
     display: none;
 }
+
+@media only screen and (min-width: 576px) {
+    #replay-text {
+        margin-top: 30px;
+        font-size: 250%;
+    }
+}
