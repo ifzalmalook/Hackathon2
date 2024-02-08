@@ -122,7 +122,17 @@ border-radius: 5px 0 0 5px;
     width: 0%;
 }
 
-#play-again-button {
+#replay-button-one {
+    color: azure;
+    width: 50%;
+    background: rgb(0, 0, 0);
+    height: 35%;
+    border: 0.2rem solid rgb(0, 0, 0);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#replay-button-two {
     color: azure;
     width: 100%;
     background: rgb(0, 0, 0);

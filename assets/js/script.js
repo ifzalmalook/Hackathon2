@@ -142,15 +142,15 @@ function changeAcceptingAnswers(newVal) {
 
 function showScore() {
     resetState();
-    progressBarFull.innerHTML = `
-    <button id="play-again-button" class="btn" onclick="replayQuiz()">Play Again?</button>
-    `
     questionElement.innerHTML = `
     <div class="col-12 text-center">
-    <h2>You scored ${score} out of ${questions.length}!</h2>
-    <button id="replay-button" class="btn mt-3" onclick="replayQuiz()">Play Again?</button>
+    <h2 id="replay-text">You scored ${score} out of ${questions.length}!</h2>
+    <button id="replay-button-one" class="btn mt-3 d-md-none" onclick="replayQuiz()">Play Again?</button>
     </div>
     `;
+    progressBarFull.innerHTML = `
+    <button id="replay-button-two" class="btn" onclick="replayQuiz()">Play Again?</button>
+    `
     if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
