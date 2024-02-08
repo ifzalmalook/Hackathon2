@@ -49,7 +49,7 @@ function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
 
-    questionElement.innerHTML = `<h2>${currentQuestion.question}</h2>`;
+    questionElement.innerHTML = `<h2 class="d-flex justify-content-center">${currentQuestion.question}</h2>`;
 
     const allAnswers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
 
@@ -141,7 +141,8 @@ function changeAcceptingAnswers(newVal) {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `<h2>You scored ${score} out of ${questions.length}!</h2>`
+    questionElement.innerHTML = `<h2>You scored ${score} out of ${questions.length}!</h2>`;
+    if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
     <div id="answer-one" class="answer-container">
@@ -158,7 +159,25 @@ function showScore() {
     <div id="answer-four" class="answer-container">
     <p class="final-text">legend!</p>
     </div>
-    `;
+    `;} else {
+        allAnswersContainer.innerHTML = `
+        <div class="answers-container col-lg-6">
+        <div id="answer-one" class="answer-container">
+        <p class="final-text">Try</p>
+        </div>
+        <div id="answer-two" class="answer-container">
+        <p class="final-text">harder</p>
+        </div>
+    </div>
+    <div class="answers-container col-lg-6">
+        <div id="answer-three" class="answer-container">
+        <p class="final-text">next</p>
+        </div>
+        <div id="answer-four" class="answer-container">
+        <p class="final-text">time!</p>
+        </div>
+        `;
+    };
     changeAcceptingAnswers(false);
 };
 
