@@ -65,6 +65,10 @@ body {
     text-align: center;
 }
 
+.header-item {
+    font-size: xx-large;
+    margin-top: 30px;
+}
 
 #outside-question-container {
     min-height: 150px;
@@ -93,6 +97,7 @@ body {
 
 
 .answer-prefix {
+    font-size: x-large;
     min-height: 90px;
     padding: 20px;
     color: azure;
