@@ -154,41 +154,42 @@ function showScore() {
     if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
-    <div id="final-text1" class="answer-container">
-    <p class="final-text hidden">You</p>
+    <div class="answer-container">
+    <p id="final-text-one" class="final-text hidden">You</p>
     </div>
-    <div id="final-text2" class="answer-container">
-    <p class="final-text hidden">are</p>
+    <div class="answer-container">
+    <p id="final-text-two" class="final-text hidden">are</p>
     </div>
 </div>
 <div class="answers-container col-lg-6">
-    <div id="final-text3" class="answer-container">
-    <p class="final-text hidden">a</p>
+    <div class="answer-container">
+    <p id="final-text-three" class="final-text hidden">a</p>
     </div>
-    <div id="final-text" class="answer-container">
-    <p class="final-text hidden">legend!</p>
+    <div class="answer-container">
+    <p id="final-text-four" class="final-text hidden">legend!</p>
     </div>
     `;} else {
         allAnswersContainer.innerHTML = `
         <div class="answers-container col-lg-6">
         <div class="answer-container">
-        <p id="final-text1" class="final-text hidden">Try</p>
+        <p class="final-text hidden">Try</p>
         </div>
         <div class="answer-container">
-        <p id="final-text2" class="final-text hidden">harder</p>
+        <p class="final-text hidden">harder</p>
         </div>
     </div>
     <div class="answers-container col-lg-6">
         <div class="answer-container">
-        <p id="final-text3" class="final-text hidden">next</p>
+        <p class="final-text hidden">next</p>
         </div>
         <div class="answer-container">
-        <p id="final-text4" class="final-text hidden">time!</p>
+        <p class="final-text hidden">time!</p>
         </div>
         `;
     };
-    changeAcceptingAnswers(false);
     runFinalText();
+    changeAcceptingAnswers(false);
+
 };
 
 
@@ -197,7 +198,7 @@ const runFinalText = () => {
   for (let i = 0; i < finalText.length; i++) {
     setTimeout(() => {
       finalText[i].classList.remove('hidden');
-    }, i * 1000);
+    }, i * 700);
   }
 };
 
