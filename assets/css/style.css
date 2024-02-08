@@ -41,6 +41,10 @@ main {
     margin: 0, auto;
 }
 
+#outside-question-container {
+    min-height: 150px;
+}
+
 #question-container {
     display: flex;
     justify-content: center;
@@ -56,6 +60,7 @@ main {
 
 
 .answer-prefix {
+    min-height: 90px;
 padding: 20px;
 background-color: lightyellow;
 border-radius: 5px 0 0 5px;
@@ -64,6 +69,7 @@ border-radius: 5px 0 0 5px;
 .answer-text {
     padding: 20px;
     background-color: lightyellow;
+    min-height: 90px;
     width: 100%;
     border-radius: 0 5px 5px 0;
 }
@@ -71,7 +77,8 @@ border-radius: 5px 0 0 5px;
 .game-header-prefix,
 .game-footer-prefix {
     text-align: center;
-    font-size: 2rem;
+    font-size: 25px;
+    padding: 0;
 }
 
 .game-header-main-text,
