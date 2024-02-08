@@ -115,6 +115,13 @@ body {
     border-radius: 0 5px 5px 0;
 }
 
+.answer-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.6);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
 .final-text {
     display: flex;
     justify-content: center;
