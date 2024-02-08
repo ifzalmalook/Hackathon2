@@ -24,9 +24,9 @@ async function fetchData() {
         const data = await response.json();
         console.log(data);
         questions = data.results;
-         startQuiz();
-       
-        
+        startQuiz();
+
+
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -35,7 +35,7 @@ async function fetchData() {
 fetchData();
 
 function startQuiz() {
-    
+
     currentQuestionIndex = 0;
     currentQuestionCounter = 0;
     score = 0;
@@ -92,9 +92,11 @@ function selectAnswer(e) {
         answerDiv.disabled = true;
     });
 
-    currentQuestionCounter++;
-    progressText.innerText = `Question ${currentQuestionCounter} / ${maxQuestions}`;
-    progressBarFull.style.width = `${(currentQuestionCounter / maxQuestions) * 100}%`;
+    if (currentQuestionCounter < maxQuestions) {
+        currentQuestionCounter++;
+        progressText.innerText = `Question ${currentQuestionCounter} / ${maxQuestions}`;
+        progressBarFull.style.width = `${(currentQuestionCounter / maxQuestions) * 100}%`;
+    }
 
     setTimeout(() => {
         handleNextButton();
@@ -109,16 +111,16 @@ function handleNextButton() {
         showQuestion();
     } else {
         // Remove the event listener from answer divs
-        
+
         showScore();
     }
-        
+
 }
 
 
 function showScore() {
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`
-    
-    };
+
+};
 
