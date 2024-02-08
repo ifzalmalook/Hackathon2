@@ -1,9 +1,13 @@
 let apiUrl = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
 let questions;
 let currentQuestionIndex = 0;
+let currentQuestionCounter = 0;
 let score = 0;
+let maxQuestions = 10;
 
 const questionElement = document.getElementById("question-container");
+const progressText = document.getElementById('progressText');
+const progressBarFull = document.getElementById('progressBarFull');
 
 //Allows iterating through the answer div boxes
 const answerDivs = Array.from(document.getElementsByClassName("answer-text"));
@@ -26,6 +30,7 @@ async function fetchData() {
 
 function startQuiz() {
     currentQuestionIndex = 0;
+    currentQuestionCounter = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
@@ -34,7 +39,6 @@ function startQuiz() {
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
 
     questionElement.innerHTML = `<h2>${currentQuestion.question}</h2>`;
 
@@ -76,9 +80,13 @@ function selectAnswer(e) {
         answerDiv.disabled = true;
     });
 
+    currentQuestionCounter++;
+    progressText.innerText = `Question ${currentQuestionCounter} / ${maxQuestions}`;
+    progressBarFull.style.width = `${(currentQuestionCounter / maxQuestions) * 100}%`;
+
     setTimeout(() => {
         handleNextButton();
-    }, 2000); // Adjust the delay time as needed (in milliseconds)
+    }, 500); // Adjust the delay time as needed (in milliseconds)
 }
 
 function showScore() {
@@ -93,7 +101,7 @@ function showScore() {
 
 function handleNextButton() {
     currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
+    if (currentQuestionCounter < questions.length) {
         showQuestion();
     } else {
         showScore();
