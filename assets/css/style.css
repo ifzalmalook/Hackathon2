@@ -41,13 +41,17 @@ main {
     margin: 0, auto;
 }
 
+.game-header-prefix {
+    text-align: center;
+    font-size: 25px;
+    padding: 0;
+}
 
-
-.game-header-prefix,
 .game-footer-prefix {
     text-align: center;
     font-size: 25px;
     padding: 0;
+    margin-top: 20px;
 }
 
 .game-header-main-text,

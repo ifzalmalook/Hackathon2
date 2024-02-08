@@ -141,9 +141,7 @@ let tCount = 0;
 let tim = setInterval(timingFunction, 1000);
 
 function timingFunction(){ 
-    document.getElementById("timer-icon").innerHTML = `
-    <p>${tCount}<p>
-    `;
+    document.getElementById("timer-icon").innerHTML = `${tCount}`;
     tCount = tCount + 1;
 
 }
