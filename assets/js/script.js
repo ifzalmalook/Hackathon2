@@ -6,7 +6,9 @@ let currentQuestionIndex = 0;
 let currentQuestionCounter = 0;
 let score = 0;
 let maxQuestions = 10;
+let acceptingAnswers = true;
 
+const allAnswersContainer = document.getElementById("all-answers");
 const questionElement = document.getElementById("question-container");
 const progressText = document.getElementById('progressText');
 const progressBarFull = document.getElementById('progressBarFull');
@@ -82,37 +84,41 @@ answerDivs.forEach(answerDiv => answerDiv.addEventListener("click", selectAnswer
 
 
 function selectAnswer(e) {
-    const selectedDiv = e.target;
-    const isCorrect = selectedDiv.dataset.correct === "true";
-
-
-
-    if (isCorrect) {
-        selectedDiv.classList.add("correct");
-        score++;
-        scoreTracker.textContent = score;
+    if (!acceptingAnswers) {
+        return;
     } else {
-        selectedDiv.classList.add("incorrect");
-    }
+        const selectedDiv = e.target;
+        const isCorrect = selectedDiv.dataset.correct === "true";
 
-    answerDivs.forEach(answerDiv => {
-        if (answerDiv.dataset.correct === "true") {
-            answerDiv.classList.add("correct");
+
+
+        if (isCorrect) {
+            selectedDiv.classList.add("correct");
+            score++;
+            scoreTracker.textContent = score;
         } else {
-            answerDiv.classList.add("incorrect");
+            selectedDiv.classList.add("incorrect");
         }
-        answerDiv.disabled = true;
-    });
 
-    if (currentQuestionCounter < maxQuestions) {
-        currentQuestionCounter++;
-        progressText.innerText = `Question ${currentQuestionCounter} / ${maxQuestions}`;
-        progressBarFull.style.width = `${(currentQuestionCounter / maxQuestions) * 100}%`;
+        answerDivs.forEach(answerDiv => {
+            if (answerDiv.dataset.correct === "true") {
+                answerDiv.classList.add("correct");
+            } else {
+                answerDiv.classList.add("incorrect");
+            }
+            answerDiv.disabled = true;
+        });
+
+        if (currentQuestionCounter < maxQuestions) {
+            currentQuestionCounter++;
+            progressText.innerText = `Question ${currentQuestionCounter} / ${maxQuestions}`;
+            progressBarFull.style.width = `${(currentQuestionCounter / maxQuestions) * 100}%`;
+        }
+
+        setTimeout(() => {
+            handleNextButton();
+        }, 500); // Adjust the delay time as needed (in milliseconds)
     }
-
-    setTimeout(() => {
-        handleNextButton();
-    }, 500); // Adjust the delay time as needed (in milliseconds)
 }
 
 
@@ -129,20 +135,41 @@ function handleNextButton() {
 
 }
 
+function changeAcceptingAnswers(newVal) {
+    acceptingAnswers = newVal;
+}
 
 function showScore() {
     resetState();
     questionElement.innerHTML = `<h2>You scored ${score} out of ${questions.length}!</h2>`
-
+    allAnswersContainer.innerHTML = `
+    <div class="answers-container col-lg-6">
+    <div id="answer-one" class="answer-container">
+    <p class="final-text">You</p>
+    </div>
+    <div id="answer-two" class="answer-container">
+    <p class="final-text">are</p>
+    </div>
+</div>
+<div class="answers-container col-lg-6">
+    <div id="answer-three" class="answer-container">
+    <p class="final-text">a</p>
+    </div>
+    <div id="answer-four" class="answer-container">
+    <p class="final-text">legend!</p>
+    </div>
+    `;
+    changeAcceptingAnswers(false);
 };
 
 // timer functions
 
 let tCount = 0;
-let tim = setInterval(timingFunction, 1000);
+let time = setInterval(timingFunction, 1000);
 
-function timingFunction(){ 
-    document.getElementById("timer-icon").innerHTML = `${tCount}`;
-    tCount = tCount + 1;
-
+function timingFunction() {
+    if (acceptingAnswers) {
+        document.getElementById("timer-icon").innerHTML = `${tCount}`;
+        tCount = tCount + 1;
+    }
 }
