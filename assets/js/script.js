@@ -131,17 +131,17 @@ function handleNextButton() {
 
 function showScore() {
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`
+    questionElement.innerHTML = `<h2>You scored ${score} out of ${questions.length}!</h2>`
 
 };
 
 // timer functions
 
-var tCount = 0;
-var tim = setInterval(timingFunction, 1000);
+let tCount = 0;
+let tim = setInterval(timingFunction, 1000);
 
 function timingFunction(){ 
-    document.getElementById("timer-icon").innerHTML = tCount;
+    document.getElementById("timer-icon").innerHTML = `${tCount}`;
     tCount = tCount + 1;
 
 }
