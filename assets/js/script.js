@@ -1,3 +1,5 @@
+
+
 let apiUrl = "https://opentdb.com/api.php?amount=10&difficulty=medium&type=multiple";
 let questions;
 let currentQuestionIndex = 0;
@@ -22,13 +24,18 @@ async function fetchData() {
         const data = await response.json();
         console.log(data);
         questions = data.results;
-        startQuiz();
+         startQuiz();
+       
+        
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
 
+fetchData();
+
 function startQuiz() {
+    
     currentQuestionIndex = 0;
     currentQuestionCounter = 0;
     score = 0;
@@ -60,9 +67,14 @@ function resetState() {
     nextButton.style.display = "none";
 }
 
+answerDivs.forEach(answerDiv => answerDiv.addEventListener("click", selectAnswer));
+
+
 function selectAnswer(e) {
     const selectedDiv = e.target;
     const isCorrect = selectedDiv.dataset.correct === "true";
+
+
 
     if (isCorrect) {
         selectedDiv.classList.add("correct");
@@ -89,27 +101,24 @@ function selectAnswer(e) {
     }, 500); // Adjust the delay time as needed (in milliseconds)
 }
 
-function showScore() {
-    resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-    nextButton.innerHTML = "Restart";
-    nextButton.style.display = "block";
-    nextButton.addEventListener("click", () => {
-        location.reload();
-    });
-}
+
 
 function handleNextButton() {
     currentQuestionIndex++;
     if (currentQuestionCounter < questions.length) {
         showQuestion();
     } else {
+        // Remove the event listener from answer divs
+        
         showScore();
     }
+        
 }
 
 
-//The answer divs now change the question
-answerDivs.forEach(answerDiv => answerDiv.addEventListener("click", handleNextButton));
+function showScore() {
+    resetState();
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`
+    
+    };
 
-fetchData();
