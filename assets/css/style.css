@@ -93,3 +93,15 @@ border-radius: 5px 0 0 5px;
     background: rgb(0, 0, 0);
     width: 0%;
 }
+
+.correct {
+    background: #9aeabc;
+}
+
+.incorrect {
+    background: #ff9393;
+}
+
+#next-btn {
+    max-width: 20vw;
+}

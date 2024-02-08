@@ -6,6 +6,7 @@ let score = 0;
 const questionElement = document.getElementById("question-container");
 const answerDivs = document.querySelectorAll(".answer-text");
 const nextButton = document.getElementById("next-btn");
+const scoreTracker = document.getElementById("score");
 
 async function fetchData() {
     try {
@@ -37,7 +38,7 @@ function showQuestion() {
 
     allAnswers.forEach((answer, index) => {
         const answerDiv = answerDivs[index];
-        answerDiv.innerText = `${String.fromCharCode(65 + index)}. ${answer}`;
+        answerDiv.innerHTML = `${answer}`;
         answerDiv.dataset.correct = answer === currentQuestion.correct_answer;
         answerDiv.addEventListener("click", selectAnswer);
     });
@@ -54,10 +55,11 @@ function resetState() {
 function selectAnswer(e) {
     const selectedDiv = e.target;
     const isCorrect = selectedDiv.dataset.correct === "true";
-    if (isCorrect) {
+    if (isCorrect && !selectedDiv.classList.contains("correct")) {
         selectedDiv.classList.add("correct");
         score++;
-    } else {
+        scoreTracker.innerHTML = `${score}`;
+    } else if (!isCorrect && !selectedDiv.classList.contains("incorrect")){
         selectedDiv.classList.add("incorrect");
     }
     answerDivs.forEach(answerDiv => {
