@@ -144,10 +144,13 @@ function showScore() {
     resetState();
     questionElement.innerHTML = `
     <div class="col-12 text-center">
-    <h2>You scored ${score} out of ${questions.length}!</h2>
-    <button id="replay-button" class="btn mt-3" onclick="replayQuiz()">Play Again?</button>
+    <h2 id="replay-text">You scored ${score} out of ${questions.length}!</h2>
+    <button id="replay-button-one" class="btn mt-3 d-md-none" onclick="replayQuiz()">Play Again?</button>
     </div>
     `;
+    progressBarFull.innerHTML = `
+    <button id="replay-button-two" class="btn" onclick="replayQuiz()">Play Again?</button>
+    `
     if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
@@ -191,16 +194,18 @@ function replayQuiz() {
     location.reload();
 };
 
+/* timer functions Timer will count down from 60 at second intervals
+when it reaches zero the game will end */
 
-
-// timer functions
-
-let tCount = 0;
+let tCount = 60;
 let time = setInterval(timingFunction, 1000);
 
 function timingFunction() {
     if (acceptingAnswers) {
         document.getElementById("timer-icon").innerHTML = `${tCount}`;
-        tCount = tCount + 1;
-    }
+        tCount = tCount - 1;
+        setTimeout(() => {
+            showScore();
+          }, 60000);
+    };
 }
