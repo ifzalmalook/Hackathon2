@@ -51,6 +51,8 @@ function showQuestion() {
 
     const allAnswers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
 
+    shuffleArray(allAnswers);
+
     allAnswers.forEach((answer, index) => {
         const answerDiv = answerDivs[index];
         answerDiv.innerHTML = `${answer}`;
@@ -66,6 +68,15 @@ function resetState() {
     });
     nextButton.style.display = "none";
 }
+
+// Function to shuffle an array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 
 answerDivs.forEach(answerDiv => answerDiv.addEventListener("click", selectAnswer));
 
@@ -124,3 +135,13 @@ function showScore() {
 
 };
 
+// timer functions
+
+var tCount = 0;
+var tim = setInterval(timingFunction, 1000);
+
+function timingFunction(){ 
+    document.getElementById("timer-icon").innerHTML = tCount;
+    tCount = tCount + 1;
+
+}

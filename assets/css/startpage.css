@@ -1,6 +1,15 @@
 :root {
     font-size: 62.5%;
-    background-image: url(assets/images/background1.jpg);
+    
+}
+
+body {
+  background-image: url("../images/background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  height: 100vh;
 }
 
 * {
@@ -84,7 +93,6 @@ img{
     font-size: 4vh;
     font-weight: bold;
     padding: 1rem 0;
-    width: 10vw;
     text-align: center;
     border: 0.2rem solid #cd6529;
     margin-bottom: 1rem;
@@ -107,3 +115,12 @@ img{
     transform: none;
   }
 
+
+  /* Media Query */
+
+  @media screen and (max-width: 912px) {
+
+    
+
+    
+  }
