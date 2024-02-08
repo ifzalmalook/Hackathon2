@@ -4,10 +4,14 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 const questionElement = document.getElementById("question-container");
-const answerDivs = document.querySelectorAll(".answer-text");
+
+//Allows iterating through the answer div boxes
+const answerDivs = Array.from(document.getElementsByClassName("answer-text"));
+
 const nextButton = document.getElementById("next-btn");
 const scoreTracker = document.getElementById("score");
 
+//gets data from API
 async function fetchData() {
     try {
         const response = await fetch(apiUrl);
@@ -32,7 +36,7 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
 
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerHTML = `<h2>${currentQuestion.question}</h2>`;
 
     const allAnswers = [...currentQuestion.incorrect_answers, currentQuestion.correct_answer];
 
@@ -55,20 +59,26 @@ function resetState() {
 function selectAnswer(e) {
     const selectedDiv = e.target;
     const isCorrect = selectedDiv.dataset.correct === "true";
-    if (isCorrect && !selectedDiv.classList.contains("correct")) {
+
+    if (isCorrect) {
         selectedDiv.classList.add("correct");
         score++;
-        scoreTracker.innerHTML = `${score}`;
-    } else if (!isCorrect && !selectedDiv.classList.contains("incorrect")){
+    } else {
         selectedDiv.classList.add("incorrect");
     }
+
     answerDivs.forEach(answerDiv => {
         if (answerDiv.dataset.correct === "true") {
             answerDiv.classList.add("correct");
+        } else {
+            answerDiv.classList.add("incorrect");
         }
         answerDiv.disabled = true;
     });
-    nextButton.style.display = "block";
+
+    setTimeout(() => {
+        handleNextButton();
+    }, 2000); // Adjust the delay time as needed (in milliseconds)
 }
 
 function showScore() {
@@ -90,6 +100,8 @@ function handleNextButton() {
     }
 }
 
-nextButton.addEventListener("click", handleNextButton);
+
+//The answer divs now change the question
+answerDivs.forEach(answerDiv => answerDiv.addEventListener("click", handleNextButton));
 
 fetchData();
