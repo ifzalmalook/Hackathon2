@@ -124,3 +124,13 @@ function showScore() {
 
 };
 
+// timer functions
+
+var tCount = 0;
+var tim = setInterval(timingFunction, 1000);
+
+function timingFunction(){ 
+    document.getElementById("timer-icon").innerHTML = tCount;
+    tCount = tCount + 1;
+
+}
