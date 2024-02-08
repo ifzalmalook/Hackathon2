@@ -41,6 +41,21 @@ main {
     margin: 0, auto;
 }
 
+
+
+.game-header-prefix,
+.game-footer-prefix {
+    text-align: center;
+    font-size: 25px;
+    padding: 0;
+}
+
+.game-header-main-text,
+.game-footer-main-text {
+    text-align: center;
+}
+
+
 #outside-question-container {
     min-height: 150px;
 }
@@ -72,18 +87,6 @@ border-radius: 5px 0 0 5px;
     min-height: 90px;
     width: 100%;
     border-radius: 0 5px 5px 0;
-}
-
-.game-header-prefix,
-.game-footer-prefix {
-    text-align: center;
-    font-size: 25px;
-    padding: 0;
-}
-
-.game-header-main-text,
-.game-footer-main-text {
-    text-align: center;
 }
 
 #progressBar {
