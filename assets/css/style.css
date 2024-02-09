@@ -149,6 +149,12 @@ body {
     width: 0%;
 }
 
+#progress-bar-replay {
+    height: 100%;
+    background: rgb(0, 0, 0);
+    width: 100%;
+}
+
 #replay-button-one {
     color: azure;
     width: 50%;
@@ -192,6 +198,13 @@ body {
     }
 
     #game {
+        max-width: 75vw;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+ #game {
         min-width: 824px;
     }
 }
