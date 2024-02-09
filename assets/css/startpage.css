@@ -15,14 +15,14 @@ body {
 
 #text-box {
   text-align: center;
-  background-color: rgba(255, 0, 0, 0.764);
+  background-color: rgb(255, 147, 147);
   padding: 20px;
   width: 50vw;
+  border: 3px solid black;
   border-radius: 10px;
 }
 
 h1{
-  color: white;
   font-size: 50px;
 }
 
@@ -30,8 +30,8 @@ h1{
 
   border-radius: 10px;
   padding: 5px;
-  background-color: green;
-  color: white;
+  background-color: black;
+  color: azure;
   font-size: large;
 
 }

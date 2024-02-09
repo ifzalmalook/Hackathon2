@@ -128,7 +128,7 @@ body {
     overflow: hidden;
 }
 
-.answer-container:hover {
+.answer-container:active {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.6);
     transition: transform 150ms;

@@ -22,6 +22,7 @@ const nextButton = document.getElementById("next-btn");
 const scoreTracker = document.getElementById("score");
 
 //gets data from API
+
 async function fetchData() {
     try {
         const response = await fetch(apiUrl);
@@ -49,6 +50,7 @@ function startQuiz() {
 
 function showQuestion() {
     resetState();
+    changeAcceptingAnswers(true);
     let currentQuestion = questions[currentQuestionIndex];
 
     questionElement.innerHTML = `<h2 class="d-flex justify-content-center">${currentQuestion.question}</h2>`;
@@ -115,11 +117,12 @@ function selectAnswer(e) {
             currentQuestionCounter++;
             progressText.innerText = `Question ${currentQuestionCounter} / ${maxQuestions}`;
             progressBarFull.style.width = `${(currentQuestionCounter / maxQuestions) * 100}%`;
+            changeAcceptingAnswers(false);
         }
 
         setTimeout(() => {
             handleNextButton();
-        }, 2000); // Adjust the delay time as needed (in milliseconds)
+        }, 1500); // Adjust the delay time as needed (in milliseconds)
     }
 }
 
