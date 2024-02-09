@@ -12,6 +12,7 @@ const replayButton = document.getElementById('replay-button');
 const allAnswersContainer = document.getElementById("all-answers");
 const questionElement = document.getElementById("question-container");
 const progressText = document.getElementById('progressText');
+const gameFooterProgress = document.getElementById('game-footer-progress');
 const progressBar = document.getElementById('progressBar');
 const progressBarFull = document.getElementById('progressBarFull');
 
@@ -152,9 +153,11 @@ function showScore() {
     <button id="replay-button-one" class="btn mt-3 d-md-none" onclick="replayQuiz()">Play Again?</button>
     </div>
     `;
-    progressBar.innerHTML = `
+    gameFooterProgress.innerHTML = `
+    <div id="progress-bar-final" class=" d-none d-md-block">
     <div id="progress-bar-replay">
     <button id="replay-button-two" class="btn" onclick="replayQuiz()">Play Again?</button>
+    </div>
     </div>
     `
     if (score>6) {
