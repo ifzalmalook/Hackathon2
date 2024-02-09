@@ -4,8 +4,9 @@
 
 Tipsy Trivia is an interactive website game which is an entertaining general knowledge test exercise. The game is engaging, and is challenging for brain puzzles and information recall to test the audience's general knowledge ability. The site is targeted towards people who are interested in gaming and people who are curious about testing their general knowledge skills. The interactive site has a USP of user friendly design and visuals to make the game accessible to a wide audience. The interactive website is particularly engaging with its use of a game timer, a score counter and clear option choices to encourage and motivate the audience to engage and continue to practice their skills.
 
+![Mockup](assets/readmeimages/resp-mockup.png)
 
-## User Experience (UK)
+
 
 ## User Stories
 
