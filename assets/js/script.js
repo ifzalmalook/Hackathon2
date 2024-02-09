@@ -119,7 +119,7 @@ function selectAnswer(e) {
 
         setTimeout(() => {
             handleNextButton();
-        }, 500); // Adjust the delay time as needed (in milliseconds)
+        }, 2000); // Adjust the delay time as needed (in milliseconds)
     }
 }
 
