@@ -157,35 +157,35 @@ function showScore() {
     if (score>6) {
     allAnswersContainer.innerHTML = `
     <div class="answers-container col-lg-6">
-    <div class="answer-container">
+    <div class="final-container">
     <p id="final-text-one" class="final-text hidden">You</p>
     </div>
-    <div class="answer-container">
+    <div class="final-container">
     <p id="final-text-two" class="final-text hidden">are</p>
     </div>
 </div>
 <div class="answers-container col-lg-6">
-    <div class="answer-container">
+    <div class="final-container">
     <p id="final-text-three" class="final-text hidden">a</p>
     </div>
-    <div class="answer-container">
+    <div class="final-container">
     <p id="final-text-four" class="final-text hidden">legend!</p>
     </div>
     `;} else {
         allAnswersContainer.innerHTML = `
         <div class="answers-container col-lg-6">
-        <div class="answer-container">
+        <div class="final-container">
         <p class="final-text hidden">Try</p>
         </div>
-        <div class="answer-container">
+        <div class="final-container">
         <p class="final-text hidden">harder</p>
         </div>
     </div>
     <div class="answers-container col-lg-6">
-        <div class="answer-container">
+        <div class="final-container">
         <p class="final-text hidden">next</p>
         </div>
-        <div class="answer-container">
+        <div class="final-container">
         <p class="final-text hidden">time!</p>
         </div>
         `;

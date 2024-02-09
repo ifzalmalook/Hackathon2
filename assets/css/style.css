@@ -89,6 +89,7 @@ body {
     min-height: 190px;
 }
 
+.final-container,
 .answer-container {
     display: flex;
     width: 100%;
