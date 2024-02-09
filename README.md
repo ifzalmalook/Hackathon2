@@ -4,6 +4,7 @@
 
 Tipsy Trivia is an interactive website game which is an entertaining general knowledge test exercise. The game is engaging, and is challenging for brain puzzles and information recall to test the audience's general knowledge ability. The site is targeted towards people who are interested in gaming and people who are curious about testing their general knowledge skills. The interactive site has a USP of user friendly design and visuals to make the game accessible to a wide audience. The interactive website is particularly engaging with its use of a game timer, a score counter and clear option choices to encourage and motivate the audience to engage and continue to practice their skills.
 
+
 ## User Experience (UK)
 
 ## User Stories
@@ -89,6 +90,7 @@ We chose colour scheme red and black to contrast well with the background image
 <img src="assets/readmeimages/black.jpg" alt="black colour pallete" width="100" height="100">
 
 ### Typography
+Google fonts and font awesome was used to import fonts such as Open Sans, Helvetica and icons for the game page into the html section and styles.css. These were chosen as they work well together and have a simple, user friendly and clear appearance that works well on the tested screen sizes to make sure that is easy to read.
 
 ### Wireframes
 
