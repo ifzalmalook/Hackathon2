@@ -101,6 +101,7 @@ We chose colour scheme red and black to contrast well with the background image
 <img src="assets/readmeimages/black.jpg" alt="black colour pallete" width="100" height="100">
 
 ### Typography
+Google fonts and font awesome was used to import fonts such as Open Sans, Helvetica and icons for the game page into the html section and styles.css. These were chosen as they work well together and have a simple, user friendly and clear appearance that works well on the tested screen sizes to make sure that is easy to read.
 
 ### Wireframes
 
