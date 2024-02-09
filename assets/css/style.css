@@ -43,6 +43,7 @@ body {
 
 #game {
     background-color: #ff9393;
+    border: 3px solid black;
     border-radius: 10px;
     max-width: 90vw;
 }
@@ -132,7 +133,28 @@ body {
     background-color: black;
     min-height: 90px;
     width: 100%;
+    border: 1px solid black;
     border-radius: 5px;
+}
+
+#final-text-one {
+    color: #c12d9f;
+    background-color: #b9fb4f;
+}
+
+#final-text-two {
+    color: #0a16cc;
+    background-color: #f19434;
+}
+
+#final-text-three {
+    color: #6324f6;
+    background-color: #f4d04e;
+}
+
+#final-text-four {
+    color: #fffb52;
+    background-color: #b22bd6;
 }
 
 #progressBar {
